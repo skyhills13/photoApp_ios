@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85122459184EF2EA001985FE /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85122458184EF2EA001985FE /* DataModel.m */; };
+		8512245C184F0B20001985FE /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8512245B184F0B20001985FE /* TableViewController.m */; };
+		8512245E184F184D001985FE /* lego2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8512245D184F184D001985FE /* lego2.jpg */; };
+		85122460184F1856001985FE /* lego3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8512245F184F1856001985FE /* lego3.jpg */; };
+		85122462184F185B001985FE /* lego6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85122461184F185B001985FE /* lego6.jpg */; };
 		85D029471845C3F300220C1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D029461845C3F300220C1E /* Foundation.framework */; };
 		85D029491845C3F300220C1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D029481845C3F300220C1E /* CoreGraphics.framework */; };
 		85D0294B1845C3F300220C1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D0294A1845C3F300220C1E /* UIKit.framework */; };
@@ -23,7 +28,6 @@
 		85D029721845C3F300220C1E /* photoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D029711845C3F300220C1E /* photoAppTests.m */; };
 		85D029811845D6FC00220C1E /* Lego8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D029801845D6FC00220C1E /* Lego8.jpg */; };
 		85D029841845E52100220C1E /* ViewControllerRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D029831845E52100220C1E /* ViewControllerRegister.m */; };
-		85D029871845EC9500220C1E /* ViewControllerMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D029861845EC9500220C1E /* ViewControllerMain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85122457184EF2EA001985FE /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		85122458184EF2EA001985FE /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		8512245A184F0B20001985FE /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8512245B184F0B20001985FE /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8512245D184F184D001985FE /* lego2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego2.jpg; sourceTree = "<group>"; };
+		8512245F184F1856001985FE /* lego3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego3.jpg; sourceTree = "<group>"; };
+		85122461184F185B001985FE /* lego6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego6.jpg; sourceTree = "<group>"; };
 		85D029431845C3F300220C1E /* photoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D029461845C3F300220C1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85D029481845C3F300220C1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,8 +70,6 @@
 		85D029801845D6FC00220C1E /* Lego8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lego8.jpg; sourceTree = "<group>"; };
 		85D029821845E52100220C1E /* ViewControllerRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRegister.h; sourceTree = "<group>"; };
 		85D029831845E52100220C1E /* ViewControllerRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRegister.m; sourceTree = "<group>"; };
-		85D029851845EC9500220C1E /* ViewControllerMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMain.h; sourceTree = "<group>"; };
-		85D029861845EC9500220C1E /* ViewControllerMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +131,19 @@
 			children = (
 				85D029551845C3F300220C1E /* AppDelegate.h */,
 				85D029561845C3F300220C1E /* AppDelegate.m */,
+				8512245D184F184D001985FE /* lego2.jpg */,
+				8512245F184F1856001985FE /* lego3.jpg */,
+				85122461184F185B001985FE /* lego6.jpg */,
 				85D029801845D6FC00220C1E /* Lego8.jpg */,
 				85D029581845C3F300220C1E /* Main.storyboard */,
+				8512245A184F0B20001985FE /* TableViewController.h */,
+				8512245B184F0B20001985FE /* TableViewController.m */,
 				85D0295B1845C3F300220C1E /* ViewController.h */,
 				85D0295C1845C3F300220C1E /* ViewController.m */,
-				85D029851845EC9500220C1E /* ViewControllerMain.h */,
-				85D029861845EC9500220C1E /* ViewControllerMain.m */,
 				85D029821845E52100220C1E /* ViewControllerRegister.h */,
 				85D029831845E52100220C1E /* ViewControllerRegister.m */,
+				85122457184EF2EA001985FE /* DataModel.h */,
+				85122458184EF2EA001985FE /* DataModel.m */,
 				85D0295E1845C3F300220C1E /* Images.xcassets */,
 				85D0294D1845C3F300220C1E /* Supporting Files */,
 			);
@@ -243,6 +257,9 @@
 			files = (
 				85D0295F1845C3F300220C1E /* Images.xcassets in Resources */,
 				85D029511845C3F300220C1E /* InfoPlist.strings in Resources */,
+				85122462184F185B001985FE /* lego6.jpg in Resources */,
+				85122460184F1856001985FE /* lego3.jpg in Resources */,
+				8512245E184F184D001985FE /* lego2.jpg in Resources */,
 				85D0295A1845C3F300220C1E /* Main.storyboard in Resources */,
 				85D029811845D6FC00220C1E /* Lego8.jpg in Resources */,
 			);
@@ -264,10 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D0295D1845C3F300220C1E /* ViewController.m in Sources */,
+				8512245C184F0B20001985FE /* TableViewController.m in Sources */,
 				85D029571845C3F300220C1E /* AppDelegate.m in Sources */,
 				85D029531845C3F300220C1E /* main.m in Sources */,
-				85D029871845EC9500220C1E /* ViewControllerMain.m in Sources */,
 				85D029841845E52100220C1E /* ViewControllerRegister.m in Sources */,
+				85122459184EF2EA001985FE /* DataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +494,7 @@
 				85D029771845C3F300220C1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85D029781845C3F300220C1E /* Build configuration list for PBXNativeTarget "photoAppTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +503,7 @@
 				85D0297A1845C3F300220C1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

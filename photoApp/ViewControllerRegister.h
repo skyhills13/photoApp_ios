@@ -10,6 +10,14 @@
 
 @interface ViewControllerRegister : UIViewController <UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *idField;
 
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordConfirmField;
+
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+
+- (IBAction)onSignupButtonClick:(id)sender;
 
 @end

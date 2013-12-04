@@ -7,15 +7,19 @@
 //
 
 #import "ViewControllerRegister.h"
+#import "DataModel.h"
 
 @interface ViewControllerRegister ()
 
-//- (IBAction)signUp:(id)sender;
+
 
 
 @end
 
 @implementation ViewControllerRegister
+{
+    DataModel *_dataModel;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +34,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _dataModel = [[DataModel alloc] init];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                 initWithTarget:self action:@selector(didTap:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)didTap:(UITapGestureRecognizer*)rec
+{
+    [self.idField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    [self.passwordConfirmField resignFirstResponder];
+    [self.emailField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,16 +55,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)signUp:(id)sender {
-//    UIAlertView *alertView;
-//    alertView = [[UIAlertView alloc]
-//                 initWithTitle:@"Welcome!"
-//                 message:@"Successfully signed up"
-//                 delegate:nil
-//                 cancelButtonTitle:@"Main"
-//                 otherButtonTitles:nil];
-//    
-//    [alertView show];
-//    [alertView release];
-//}
+
+- (IBAction)onSignupButtonClick:(id)sender {
+    [_dataModel saveId:self.idField.text
+     withPassword:self.passwordField.text
+     withConfirmPassword:self.passwordConfirmField.text
+     withEmailAddress:self.emailField.text];
+    NSLog(@"%@", [_dataModel description]);
+}
 @end

@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uzm-Op-eoN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="hj5-1R-fjb">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="uzm-Op-eoN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yY-CU-7xa">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="fo4-KG-pG7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duh-U7-S2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="53"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -32,6 +47,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <state key="normal" title="login"/>
+                                <connections>
+                                    <action selector="onLoginButtonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TX7-xq-rIa"/>
+                                    <segue destination="pmI-qX-anl" kind="modal" id="3wx-TT-MLq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou4-jv-UNH">
                                 <rect key="frame" x="167" y="497" width="100" height="40"/>
@@ -41,7 +60,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9Rs-bo-rAI" kind="modal" id="HzV-1w-O5q"/>
+                                    <segue destination="9Rs-bo-rAI" kind="push" id="HzV-1w-O5q"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-iG-SFE">
@@ -59,6 +78,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zta-jr-sZz"/>
+                    <connections>
+                        <outlet property="idField" destination="6gV-iG-SFE" id="ke5-Wp-GlL"/>
+                        <outlet property="passwordField" destination="PnB-1w-bAA" id="z6j-Py-BAA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,6 +122,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onSignupButtonClick:" destination="9Rs-bo-rAI" eventType="touchUpInside" id="OOb-Bm-qw3"/>
                                     <segue destination="vXZ-lx-hvc" kind="modal" id="PPu-Wq-a9Y"/>
                                 </connections>
                             </button>
@@ -119,13 +144,25 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A53-pN-xU2">
+                                <rect key="frame" x="54" y="410" width="213" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="A53-pN-xU2" id="Z5I-d4-hiQ"/>
+                        <outlet property="idField" destination="Fcc-ZC-TKc" id="0UC-b6-hAv"/>
+                        <outlet property="passwordConfirmField" destination="lVL-G9-uHv" id="HEt-m7-L1p"/>
+                        <outlet property="passwordField" destination="XtE-m3-VHD" id="o1K-GD-q01"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUb-Iv-uI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="20"/>
+            <point key="canvasLocation" x="573" y="4"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mKW-jx-8bI">
@@ -149,10 +186,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oZH-52-nQ4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGA-cP-SIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="68" y="739"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="w27-mt-hEC">
+            <objects>
+                <tableViewController id="pmI-qX-anl" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vGZ-py-a6B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="pmI-qX-anl" id="IPR-xE-JS2"/>
+                            <outlet property="delegate" destination="pmI-qX-anl" id="NDT-vR-fo9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y42-xB-2NR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="729"/>
         </scene>
     </scenes>
     <resources>
@@ -163,4 +219,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="PPu-Wq-a9Y"/>
+    </inferredMetricsTieBreakers>
 </document>
