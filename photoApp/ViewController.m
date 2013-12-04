@@ -39,13 +39,21 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onLoginButtonClick:(id)sender {
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
     
-    [_dataModel authenticateID:self.idField.text
-                   withPassword:self.passwordField.text];
+    return [_dataModel authenticateID:self.idField.text
+                       withPassword:self.passwordField.text];
+
+}
+
+//IBAction do nothing related to change view
+- (IBAction)onLoginButtonClick:(id)sender {
+    NSLog(@"%@", [_dataModel description]);
+    
+    
     
 //    BOOL idCheck = [_dataModel authenticateID:self.idField.text
 //                  withPassword:self.passwordField.text];

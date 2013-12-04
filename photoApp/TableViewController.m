@@ -48,16 +48,21 @@
 {
     NSDictionary* item = [_dataModel objectAtIndex:indexPath.row];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:
-                             UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+                             UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     
-    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(3,2, 50, 50)];
-    imv.image=[UIImage imageNamed:@"lego6.jpg"];
-    [cell.contentView addSubview:imv];
+//    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(3,2, 50, 50)];
+//    imv.image=[UIImage imageNamed:@"lego6.jpg"];
+//    [cell.contentView addSubview:imv];
     
-    //cell.imageView.image = [UIImage imageNamed:@"lego3.jpg"];
-                            //[item objectForKey:@"img"]];
+    cell.imageView.image = [UIImage imageNamed:@"lego3.jpg"];
+//                            [item objectForKey:@"img"]];
     cell.textLabel.text = [item objectForKey:@"text"];
     cell.detailTextLabel.text = [item objectForKey:@"image"];
     return cell;
+}
+
+//not working
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"comments" sender:indexPath];
 }
 @end

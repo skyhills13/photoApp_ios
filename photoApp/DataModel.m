@@ -22,11 +22,14 @@
     if(self){
         _itemArray = [@[
                         @{@"text":@"first",
-                          @"image":@"lego2.jpg"},
+                          @"image":@"lego2.jpg",
+                          @"comments":@"aaa"},
                         @{@"text":@"second",
-                        @"image":@"lego3.jpg"},
+                        @"image":@"lego3.jpg",
+                          @"comments":@"aaa"},
                         @{@"text":@"third",
-                        @"image":@"lego6.jpg"},]
+                          @"image":@"lego6.jpg",
+                          @"comments":@"aaa"}]
                       mutableCopy];
         _registerData = [[NSMutableDictionary alloc] initWithCapacity:4];
     }
@@ -57,7 +60,7 @@ withEmailAddress:(NSString*)emailAddress
 
 -(BOOL)authenticateID:(NSString *)userid withPassword:(NSString *)password
 {
-    return YES;
+    return true;
 }
 
 -(NSUInteger)getArrayCount

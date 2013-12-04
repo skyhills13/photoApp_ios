@@ -12,6 +12,7 @@
 		8512245E184F184D001985FE /* lego2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8512245D184F184D001985FE /* lego2.jpg */; };
 		85122460184F1856001985FE /* lego3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8512245F184F1856001985FE /* lego3.jpg */; };
 		85122462184F185B001985FE /* lego6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85122461184F185B001985FE /* lego6.jpg */; };
+		85122465184F386E001985FE /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85122464184F386E001985FE /* CommentsViewController.m */; };
 		85D029471845C3F300220C1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D029461845C3F300220C1E /* Foundation.framework */; };
 		85D029491845C3F300220C1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D029481845C3F300220C1E /* CoreGraphics.framework */; };
 		85D0294B1845C3F300220C1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D0294A1845C3F300220C1E /* UIKit.framework */; };
@@ -48,6 +49,8 @@
 		8512245D184F184D001985FE /* lego2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego2.jpg; sourceTree = "<group>"; };
 		8512245F184F1856001985FE /* lego3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego3.jpg; sourceTree = "<group>"; };
 		85122461184F185B001985FE /* lego6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lego6.jpg; sourceTree = "<group>"; };
+		85122463184F386E001985FE /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		85122464184F386E001985FE /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		85D029431845C3F300220C1E /* photoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D029461845C3F300220C1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85D029481845C3F300220C1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,15 +132,17 @@
 		85D0294C1845C3F300220C1E /* photoApp */ = {
 			isa = PBXGroup;
 			children = (
+				85D029581845C3F300220C1E /* Main.storyboard */,
 				85D029551845C3F300220C1E /* AppDelegate.h */,
 				85D029561845C3F300220C1E /* AppDelegate.m */,
 				8512245D184F184D001985FE /* lego2.jpg */,
 				8512245F184F1856001985FE /* lego3.jpg */,
 				85122461184F185B001985FE /* lego6.jpg */,
 				85D029801845D6FC00220C1E /* Lego8.jpg */,
-				85D029581845C3F300220C1E /* Main.storyboard */,
 				8512245A184F0B20001985FE /* TableViewController.h */,
 				8512245B184F0B20001985FE /* TableViewController.m */,
+				85122463184F386E001985FE /* CommentsViewController.h */,
+				85122464184F386E001985FE /* CommentsViewController.m */,
 				85D0295B1845C3F300220C1E /* ViewController.h */,
 				85D0295C1845C3F300220C1E /* ViewController.m */,
 				85D029821845E52100220C1E /* ViewControllerRegister.h */,
@@ -285,6 +290,7 @@
 				85D029571845C3F300220C1E /* AppDelegate.m in Sources */,
 				85D029531845C3F300220C1E /* main.m in Sources */,
 				85D029841845E52100220C1E /* ViewControllerRegister.m in Sources */,
+				85122465184F386E001985FE /* CommentsViewController.m in Sources */,
 				85122459184EF2EA001985FE /* DataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
