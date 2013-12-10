@@ -49,7 +49,7 @@
                                 <state key="normal" title="login"/>
                                 <connections>
                                     <action selector="onLoginButtonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TX7-xq-rIa"/>
-                                    <segue destination="pmI-qX-anl" kind="modal" id="3wx-TT-MLq"/>
+                                    <segue destination="pmI-qX-anl" kind="push" id="3wx-TT-MLq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou4-jv-UNH">

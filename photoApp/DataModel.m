@@ -23,13 +23,13 @@
         _itemArray = [@[
                         @{@"text":@"first",
                           @"image":@"lego2.jpg",
-                          @"comments":@"aaa"},
+                          @"comments":@"aaba"},
                         @{@"text":@"second",
                         @"image":@"lego3.jpg",
-                          @"comments":@"aaa"},
+                          @"comments":@"aasa"},
                         @{@"text":@"third",
                           @"image":@"lego6.jpg",
-                          @"comments":@"aaa"}]
+                          @"comments":@"aaca"}]
                       mutableCopy];
         _registerData = [[NSMutableDictionary alloc] initWithCapacity:4];
     }

@@ -54,8 +54,7 @@
 //    imv.image=[UIImage imageNamed:@"lego6.jpg"];
 //    [cell.contentView addSubview:imv];
     
-    cell.imageView.image = [UIImage imageNamed:@"lego3.jpg"];
-//                            [item objectForKey:@"img"]];
+    cell.imageView.image = [UIImage imageNamed:[item objectForKey:@"image"]];
     cell.textLabel.text = [item objectForKey:@"text"];
     cell.detailTextLabel.text = [item objectForKey:@"image"];
     return cell;
@@ -65,4 +64,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self performSegueWithIdentifier:@"comments" sender:indexPath];
 }
+
+
+
 @end
