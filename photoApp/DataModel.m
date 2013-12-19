@@ -60,7 +60,30 @@ withEmailAddress:(NSString*)emailAddress
 
 -(BOOL)authenticateID:(NSString *)userid withPassword:(NSString *)password
 {
-    return true;
+    NSString *aURLString = @"http://1.234.2.8/login.php";
+    NSString *aFormData = [NSString stringWithFormat:@"id=%@&passwd=%@", userid, password];
+    NSURL *aURL = [NSURL URLWithString:aURLString];
+    NSMutableURLRequest *aRequest =
+    [NSMutableURLRequest requestWithURL:aURL];
+    [aRequest setHTTPMethod:@"POST"];
+    [aRequest setHTTPBody:
+    [aFormData dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSHTTPURLResponse *aResponse;
+    NSError *aError;
+    NSData *aResultData = [NSURLConnection
+                           sendSynchronousRequest:aRequest
+                           returningResponse:&aResponse error:&aError];
+    
+    
+    NSDictionary *dataDictionary = [NSJSONSerialization
+                                    JSONObjectWithData:aResultData
+                                    options:NSJSONReadingMutableContainers
+                                    error:nil];
+    NSLog(@"login response = %d", aResponse.statusCode);
+    NSLog(@"login result = %@", dataDictionary );
+    
+    return ( [[dataDictionary objectForKey:@"result"] isEqualToString:@"OK"]);
 }
 
 -(NSUInteger)getArrayCount
