@@ -22,7 +22,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	_dataModel = [[DataModel alloc] init];
+	_dataModel = [DataModel getInstance];
+    
+    _idField.delegate = self;
+    _passwordField.delegate = self;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self action:@selector(didTap:)];
@@ -46,12 +49,11 @@
     
     return [_dataModel authenticateID:self.idField.text
                        withPassword:self.passwordField.text];
-
 }
 
 //IBAction do nothing related to change view
 - (IBAction)onLoginButtonClick:(id)sender {
-    NSLog(@"%@", [_dataModel description]);
+    //NSLog(@"%@", [_dataModel description]);
     
     
     
@@ -62,4 +64,47 @@
 //        
 //    }
 }
+
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [UIView beginAnimations:@"MyAnimation" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
+    
+    CGRect newframe = self.view.frame;
+    
+    if ( textField == _idField)
+    {
+        newframe.origin.y = -120;
+    }
+    else if ( textField == _passwordField )
+    {
+        newframe.origin.y = -150;
+    }
+    self.view.frame = newframe;
+    
+    //self.view.alpha
+    //self.view.backgroundColor = [UIColor whiteColor];
+    [UIView commitAnimations];
+    
+    return YES;
+}
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [UIView beginAnimations:@"MyAnimation" context:nil];
+    [UIView setAnimationDuration:0.5];
+    //    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    
+    CGRect newframe = self.view.frame;
+    newframe.origin.y = 0;
+    self.view.frame = newframe;
+    
+    [UIView commitAnimations];
+    
+    return YES;
+}
+
 @end

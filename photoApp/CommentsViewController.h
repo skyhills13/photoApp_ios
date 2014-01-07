@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
-
+@property NSInteger index;
 @end

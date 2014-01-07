@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLImageEditor.h"
 
-@interface TableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
-
+@interface TableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, CLImageEditorDelegate>
 @end
