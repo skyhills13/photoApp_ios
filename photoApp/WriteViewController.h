@@ -20,3 +20,6 @@
 - (IBAction)uploadBtnClick:(id)sender;
 - (void)prepareData:(UIImage *)image;
 @end
+
+//Ebook : 몇권이랑
+//오브젝티브 C 2.0 - 서경진 교수님

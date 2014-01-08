@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "photoApp/TableViewController.m"
-            timestampString = "410792330.515214"
+            timestampString = "410851877.405596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-imageEditor:didFinishEdittingWithImage:"
             landmarkType = "5">
          </BreakpointContent>

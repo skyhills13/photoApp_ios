@@ -89,9 +89,12 @@ withEmailAddress:(NSString*)emailAddress
     
     
     NSURL *aURL = [NSURL URLWithString:urlString];
-    NSMutableURLRequest* aRequest = [NSMutableURLRequest requestWithURL:aURL];
+    NSMutableURLRequest* aRequest = [NSMutableURLRequest requestWithURL:aURL];//해당 유알엘을 가지고 리퀘스트 객체를 만든다 html이랑 똑같아
     [aRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [aRequest setHTTPMethod:@"POST"];
+    ////get: 요청방식(유알엘에 뭐 붙이는거)  post: 은닉을 할 수 있다는 장점 전달, 업로드 방식 ( 유알엘 변동 없이 리퀘스트 바디에 담는 방식).
+    //수업시간에는 로그인을 구현할때, get방식으로 구현했으나, 나는 post방식으로 했다
+    //url에 아이디 패스 워드 붙이는게 좋아보이지 않아서
     [aRequest setHTTPBody:postData];
     //send
     
@@ -119,9 +122,10 @@ withEmailAddress:(NSString*)emailAddress
     return [_listArray count];
 }
 
+//list에 대한 데이터를 가지고 올때 쓰는 connection
 //커넥션 델리게이션을 통해서 나머지는 다 처리할거기 때문에 요청, 연결하는 부분만 여기서 구현해놓으면 되.
 //헤더에 NSURLConnectionDataDelegate 선언을 통해서 델리게이션 모델부분에서 쓰는것으로 선언
-- (void)getBoardDataFromServer
+- (void)getBoardDataFromServer //커넥션 요청만 해
 {
     _responseData = [[NSMutableData alloc] initWithCapacity:10];
     NSString *aURLString = @"http://localhost:8080/board/list.json";//@"http://1.234.2.8/board.php";
@@ -133,13 +137,13 @@ withEmailAddress:(NSString*)emailAddress
 }
 
 //NSURLConnectionDataDelegate 선언으로 제공되는 함수들
-- (void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data
+- (void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data //서버에서 데이터 보낼때
 {
     //데이터가 서버로부터 도착하면 위에 선언해놓은 responseData에 새로운 데이터를 더한다.
     [_responseData appendData:data];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection //connection 끝나고
 {
     NSError* aError;
     
@@ -153,14 +157,14 @@ withEmailAddress:(NSString*)emailAddress
     NSLog(@"result json = %@", resultArray);
     _listArray = resultArray;
     
-    //리스트를 업데이트하기위해서 새로고침하는거야ㅎ
+    //리스트를 업데이트하기위해서 새로고침하는거야
     [_tableController.tableView reloadData];
     
     NSLog(@"Error : %@",aError);
 }
 ////NSURLConnectionDataDelegate 선언으로 제공되는 함수들 끝
 
-- (BOOL)UploadNewPostTitle:(NSString*)title WithContent:(NSString*)content WithImage:(UIImage*)image
+- (BOOL)UploadNewPostTitle:(NSString*)title WithContent:(NSString*)content WithImage:(UIImage*)image //새로운 포스트를 작성해서 전송을 눌렀을때
 {
     NSURL* url = [NSURL URLWithString:@"http://localhost:8080/board/uploadFromIOS"];
     
@@ -172,6 +176,9 @@ withEmailAddress:(NSString*)emailAddress
     
     // header value
     NSString* headerBoundary = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", stringBoundary];
+    //웹에서 했듯이
+    //우리가 일반적으로 보내는 텍스트 데이터가 아니라 바이너리 데이터를 보낼때 쓰는거야 사진같은거말야.
+    //
     
     // set header
     [request addValue:headerBoundary forHTTPHeaderField:@"Content-Type"];
@@ -207,7 +214,7 @@ withEmailAddress:(NSString*)emailAddress
     [postBody appendData:[@"Content-Type: image/jpeg\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[@"Content-Transfer-Encoding: binary\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSData *imgData = UIImageJPEGRepresentation(image, 1.0);
+    NSData *imgData = UIImageJPEGRepresentation(image, 1.0); //이미지 파일을 엔에스 데이터 형태로 보낸다
     // add it to body
     [postBody appendData:imgData];
     [postBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];

@@ -37,8 +37,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _dataModel = [[DataModel alloc] init]; //3
-    _dataModel.tableController = self;
+    _dataModel = [DataModel getInstance]; //3
+    _dataModel.tableController = self; //reload를 위해서 커넥션이 끝날경우 모델에서 호출해줘야하니까 객체 저장
     
     //오른쪽 상단에 카메라 버튼만들기
     UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(newImage:)];
@@ -83,10 +83,11 @@
     
     //다이나믹 셀을 만들기 위한 참조. tableViewCell클래스를 참조해서 거기에 있는 애들을 쓰는거야!!
     TableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"dynamicCell"];
-    
+//    NSLog(@"%@", item);
     cell.cellTitle.text = [item objectForKey:@"title"];
     cell.cellContent.text = [item objectForKey:@"contents"];
-    
+//    NSLog(@"comments :!!");
+//    NSLog(@"%@", [item objectForKey:@"comments"]);
     
     NSString* imgUrl = [item objectForKey:@"fileName"];
     
@@ -110,10 +111,11 @@
     return cell;
 }
 
-//not working
+
+//클릭됐을때
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"comments" sender:indexPath];
     index = indexPath.row;
+    [self performSegueWithIdentifier:@"Comments" sender:indexPath];
 }
 
 
@@ -124,6 +126,8 @@
     UIImagePickerController *picker
     = [[UIImagePickerController alloc] init];
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    
     picker.delegate = self;
     [self.navigationController
      presentViewController:picker animated:YES completion:^{}];

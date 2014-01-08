@@ -68,7 +68,7 @@
     }
 }
 
-
+//표기법 바꾸기
 - (BOOL)UploadNewPostTitle:(NSString*)title WithContent:(NSString*)content WithImage:(UIImage*)image
 {
     NSURL* url = [NSURL URLWithString:@"http://localhost:8080/board/uploadFromIOS"];

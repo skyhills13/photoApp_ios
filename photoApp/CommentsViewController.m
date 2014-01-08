@@ -31,10 +31,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController setNavigationBarHidden:false];
     _dataModel = [DataModel getInstance];
+    NSLog(@"dataModel : %@", _dataModel);
     NSLog(@"%@",[_dataModel objectAtIndex:_index]);
     _contents = [[_dataModel objectAtIndex:_index] objectForKey:@"comments"];
     NSLog(@"contents : %@", _contents);
+    NSLog(@"objectAtIndex : %@", [_dataModel objectAtIndex:_index]);
 }
 
 - (void)didReceiveMemoryWarning

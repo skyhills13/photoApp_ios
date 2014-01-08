@@ -18,9 +18,7 @@
 -(BOOL)authenticateID:(NSString*)userid
          withPassword:(NSString*)password;
 
--(NSDictionary*)objectAtIndex:
-(NSUInteger)index;
-
+-(NSDictionary*)objectAtIndex:(NSUInteger)index;
 -(NSUInteger)getArrayCount;
 - (void)getBoardDataFromServer;
 - (BOOL)UploadNewPostTitle:(NSString*)title WithContent:(NSString*)content WithImage:(UIImage*)image;
